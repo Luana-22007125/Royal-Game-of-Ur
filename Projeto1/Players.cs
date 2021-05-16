@@ -35,7 +35,7 @@ namespace OlaMundo{
             return piece;
         }
         
-        //Condições para O sitio onde a peça vai
+        //Condições para o sitio onde a peça vai
         public Boolean slotHasPiece(int slot) {
             if (getPieceInSlot(slot) == -1) return false;
             return true;
