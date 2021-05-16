@@ -16,7 +16,7 @@ Luana Sousa 22007125
 ### Repositório Git
 
 
-https://github.com/Luana-22007125/Projeto1.git
+https://github.com/Luana-22007125/Royal-Game-of-Ur
 
 
 ### Arquitetura
