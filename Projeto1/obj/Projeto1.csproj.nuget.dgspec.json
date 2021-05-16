@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luani\\Desktop\\Uni\\Linguagens de programacao\\Projeto1\\Projeto1.csproj": {}
+    "C:\\Users\\luani\\Desktop\\Uni\\Linguagens de programacao\\Royal-Game-of-Ur\\Projeto1\\Projeto1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luani\\Desktop\\Uni\\Linguagens de programacao\\Projeto1\\Projeto1.csproj": {
+    "C:\\Users\\luani\\Desktop\\Uni\\Linguagens de programacao\\Royal-Game-of-Ur\\Projeto1\\Projeto1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luani\\Desktop\\Uni\\Linguagens de programacao\\Projeto1\\Projeto1.csproj",
+        "projectUniqueName": "C:\\Users\\luani\\Desktop\\Uni\\Linguagens de programacao\\Royal-Game-of-Ur\\Projeto1\\Projeto1.csproj",
         "projectName": "Projeto1",
-        "projectPath": "C:\\Users\\luani\\Desktop\\Uni\\Linguagens de programacao\\Projeto1\\Projeto1.csproj",
+        "projectPath": "C:\\Users\\luani\\Desktop\\Uni\\Linguagens de programacao\\Royal-Game-of-Ur\\Projeto1\\Projeto1.csproj",
         "packagesPath": "C:\\Users\\luani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luani\\Desktop\\Uni\\Linguagens de programacao\\Projeto1\\obj\\",
+        "outputPath": "C:\\Users\\luani\\Desktop\\Uni\\Linguagens de programacao\\Royal-Game-of-Ur\\Projeto1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\luani\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -10,14 +10,17 @@ namespace OlaMundo
         {
             Player p1 = new Player();
             Player p2 = new Player();
-            // Console.WriteLine("*-*");
-            // Console.WriteLine("---");
-            // Console.WriteLine("---");
-            // Console.WriteLine("-*-");
-            // Console.WriteLine(" - ");
-            // Console.WriteLine(" - ");
-            // Console.WriteLine("*-*");
-            // Console.WriteLine("---");
+
+            /*
+            O tabuleiro criado em ASCII:
+            Console.WriteLine("*-*");
+            Console.WriteLine("---");
+            Console.WriteLine("---");
+            Console.WriteLine("-*-");
+            Console.WriteLine(" - ");
+            Console.WriteLine(" - ");
+            Console.WriteLine("*-*");
+            Console.WriteLine("---"); */
 
             Boolean play = true;
             Console.WriteLine("Bem vindo, por favor pressione qualquer tecla para começar o jogo, e boa sorte!");
@@ -25,9 +28,12 @@ namespace OlaMundo
             int round = 2;
 
             do {
+                //Limpa o espaço na consola
                 for (int i = 0; i<20;i++) {
                     Console.WriteLine("");
                 }
+
+                //Se os jogadores acabarem as peças, ganham
                 if(p1.hasAllFinished()) {
                     play = false;
                     Console.WriteLine("Jogador 1 ganhou!");
@@ -41,44 +47,17 @@ namespace OlaMundo
                 showMap(p1, p2);
                 if (round == 1) {
                     round = 2;
-                    /*string b = "";
-                    int count = 0;
-                    for (int i = 15; i>=0; i--) {
-                        if (p2.slotHasPiece(i)) {
-                            b += p2.getAllPieces()[p2.getPieceInSlot(i)];
-                            if (count == 6) {
-                                b += ".";
-                            } else {
-                                b += ", ";
-                            }
-                            count++;
-                        }
-                    }
-                    Console.WriteLine(b);*/
                 } else {
                     round = 1;
-                    /*string b = "";
-                    int count = 0;
-                    for (int i = 15; i>=0; i--) {
-                        if (p1.slotHasPiece(i)) {
-                            b += p1.getAllPieces()[p1.getPieceInSlot(i)];
-                            if (count == 6) {
-                                b += ".";
-                            } else {
-                                b += ", ";
-                            }
-                            count++;
-                        }
-                    }
-                    Console.WriteLine(b);*/
                 }
 
+                //O jogador rola os dados
                 Console.WriteLine("");
-                Console.WriteLine("Jogador " + round + ": pressione qualquer número para rolar os dados.");
+                Console.WriteLine("Jogador " + round + ": pressione qualquer tecla para rolar os dados.");
                 Console.ReadLine();
                 Random random = new Random();
                 int total = 0;
-                int[] all = new int[4];
+                int[] all = new int[4]; //4 dados
                 string pool = "";
                 for (int i = 0; i<4; i++) {
                     all[i] = random.Next(0, 3);
@@ -86,12 +65,15 @@ namespace OlaMundo
                     pool += numbersToChars(all[i]);
                 }
 
+                //Caso role 0
                 Console.WriteLine(pool);
                 if (total == 0) {
-                    Console.WriteLine("Jogador " + round + ": teve azar. Rolou 0.");
+                    Console.WriteLine("Jogador " + round + ": teve azar, rolou 0.");
                     Console.WriteLine("> Pressione qualquer tecla para continuar.");
                     Console.ReadLine();
                 } else {
+
+                    //A não ser que o jogador role 0,
                     int slot;
                     Boolean again = true;
                     while (again) {
@@ -103,6 +85,9 @@ namespace OlaMundo
                         }
                         slot = Int16.Parse(resposta);
                         if (slot < 0 || slot > 15) slot = 0;
+
+                        //Casos de para onde as peças vão, se podem ou não ir
+                        //Ronda 1 ou 2 conforme o jogador
                         if (round == 1) {
                             if (p1.slotHasPiece(slot) && (slot + total <= 15)) {
                                 int newslot = slot + total;
@@ -170,12 +155,19 @@ namespace OlaMundo
             } while(play);
         }
 
+        /*Rolar os dados, onde "o" = 1 casa para andar e "\\" é igual a 0
+          Exemplo: o\\\ = 1
+                   \\\\ = 0
+                   oooo = 4
+        */
         static string numbersToChars(int numb) {
             if (numb == 1) return "o";
             if (numb == 2) return "\\";
             return "/";
         }
 
+        //Localiza cada parte do mapa em números e coloca as peças de cada jogador onde devem estar
+        //Criação do mapa exemplificado no ínicio
         static void showMap(Player player1, Player player2) {
             string a1 = "-", a2 = "-", b1 = "-", b2 = "-", c1 = "-", c2 = "-";
             string d1 = "*", d2 = "*";
