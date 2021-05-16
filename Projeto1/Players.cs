@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System;
 
-//Criação dos 2 jogadores
+// Criação da class usada para as peças dos jogadores
 
-namespace OlaMundo{
+namespace OlaMundo {
 
     class Player {
 
-        //Cada jogador tem 7 peças
+        // Variável com as peças do jogador(7 peças)
         int[] piecesSlots = new int[7];
 
         public Player() {
@@ -16,14 +16,14 @@ namespace OlaMundo{
             }
         }
 
-        //Junta a peça escolhida e o slot onde vai parar
+        // Junta a peça escolhida e o slot onde vai parar
         public void setPieceNewSlot(int slot, int jumps) {
             int piece = getPieceInSlot(slot);
             piecesSlots[piece] = piecesSlots[piece] + jumps;
             Console.WriteLine("[!] A peça do " + slot + " foi parar ao " + (slot + jumps) + ".");
         }
 
-        //Faz a peça mover-se para onde o jogador quer
+        // Faz a peça mover-se para onde o jogador quer
         public int getPieceInSlot(int slot) {
             int piece = -1;
             for (int i = 0; i<7; i++) {
@@ -35,16 +35,13 @@ namespace OlaMundo{
             return piece;
         }
         
-        //Condições para o sitio onde a peça vai
+        // Condições para o sitio onde a peça vai
         public Boolean slotHasPiece(int slot) {
             if (getPieceInSlot(slot) == -1) return false;
             return true;
         }
-        
-        public int[] getAllPieces() {
-            return piecesSlots;
-        }
 
+        // Verificar se o jogador tem alguma peça que não esteja no final
         public Boolean hasAllFinished() {
             for (int i = 0; i<7; i++) {
                 if (piecesSlots[i] != 15) return false;
